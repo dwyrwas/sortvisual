@@ -5,7 +5,7 @@
 
 .array-cell{
     width: 2px;
-    background-color: red;
+    background-color: blue;
     margin: 0 1px;
     display: inline-block;
 }
