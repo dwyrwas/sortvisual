@@ -1,0 +1,11 @@
+.array-container{
+    position: absolute;
+    left: 100px;
+}
+
+.array-cell{
+    width: 2px;
+    background-color: red;
+    margin: 0 1px;
+    display: inline-block;
+}
