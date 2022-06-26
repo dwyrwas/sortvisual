@@ -1,7 +1,8 @@
 import React from 'react';
 import './SortingApp.css';
-import mergeSort from '../SortingAlgorithms/MergeSort'
+import mergeSort from '../SortingAlgorithms/MergeSort';
 import bubbleSort from '../SortingAlgorithms/BubbleSort';
+import quickSort from '../SortingAlgorithms/QuickSort';
 
 export default class SortingApp extends React.Component{
     constructor(props) {
@@ -24,6 +25,11 @@ export default class SortingApp extends React.Component{
     bubbleSort(){
         const bubbleSortedArray = bubbleSort(this.state.array.slice());
         this.setState({array:bubbleSortedArray});
+    }
+
+    quickSort(){
+        const quickSortedArray = quickSort(this.state.array.slice());
+        this.setState({array:quickSortedArray});
     }
 
     componentDidMount() {
@@ -50,6 +56,7 @@ export default class SortingApp extends React.Component{
             <button onClick={()=>this.jsSort()}>JavaScript Sort</button>
             <button onClick={()=>this.bubbleSort()}>Bubble Sort</button>
             <button onClick={()=>this.mergeSort()}>Merge Sort</button>
+            <button onClick={()=>this.quickSort()}>Quick Sort</button>
             </div>   
         );
     }
