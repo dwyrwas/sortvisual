@@ -1,7 +1,7 @@
 import React from 'react';
 import './SortingApp.css';
 import mergeSort from '../SortingAlgorithms/MergeSort'
-
+import bubbleSort from '../SortingAlgorithms/BubbleSort';
 
 export default class SortingApp extends React.Component{
     constructor(props) {
@@ -22,7 +22,8 @@ export default class SortingApp extends React.Component{
     }
 
     bubbleSort(){
-
+        const bubbleSortedArray = bubbleSort(this.state.array.slice());
+        this.setState({array:bubbleSortedArray});
     }
 
     componentDidMount() {
