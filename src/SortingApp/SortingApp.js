@@ -13,7 +13,7 @@ export default class SortingApp extends React.Component{
     }
 
     jsSort(){
-        const sortedArray = this.state.array.slice().sort();
+        const sortedArray = this.state.array.slice().sort((a,b)=>{return a -b});
         this.setState({array:sortedArray});
     }
 
