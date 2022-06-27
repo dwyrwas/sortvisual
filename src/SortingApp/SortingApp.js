@@ -38,8 +38,8 @@ export default class SortingApp extends React.Component{
 
     resetArray() {
         const array = [];
-        for (let i=0; i<100; i++){
-            array.push(getRandom(5,100));
+        for (let i=0; i<300; i++){
+            array.push(getRandom(5,500));
         }
         this.setState({array});
     }
@@ -52,11 +52,14 @@ export default class SortingApp extends React.Component{
                 {array.map((value, idx) => (
                         <div className="array-cell" key={idx} style={{height:`${value}px`}}></div>
                 ))}
-            <button onClick={()=>this.resetArray()}>Generate New Array</button>
-            <button onClick={()=>this.jsSort()}>JavaScript Sort</button>
-            <button onClick={()=>this.bubbleSort()}>Bubble Sort</button>
-            <button onClick={()=>this.mergeSort()}>Merge Sort</button>
-            <button onClick={()=>this.quickSort()}>Quick Sort</button>
+            <div className="button-container">
+                <button onClick={()=>this.resetArray()}>Generate New Array</button>
+                <button onClick={()=>this.jsSort()}>JavaScript Sort</button>
+                <button onClick={()=>this.bubbleSort()}>Bubble Sort</button>
+                <button onClick={()=>this.mergeSort()}>Merge Sort</button>
+                <button onClick={()=>this.quickSort()}>Quick Sort</button>
+            </div>
+            
             </div>   
         );
     }
