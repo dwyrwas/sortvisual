@@ -12,6 +12,16 @@ export default class SortingApp extends React.Component{
         };
     }
 
+    compareStyle = {
+        backgroundColor: "yellow",
+    }
+
+    sortedStyle = {
+        backgroundColor: "green",
+    }
+
+    
+
     jsSort(){
         const sortedArray = this.state.array.slice().sort((a,b)=>{return a -b});
         this.setState({array:sortedArray});
