@@ -9,6 +9,7 @@ export default class SortingApp extends React.Component{
         super(props);
         this.state = {
             array: [],
+            // size: 0
         };
     }
 
@@ -42,13 +43,17 @@ export default class SortingApp extends React.Component{
         this.setState({array:quickSortedArray});
     }
 
+    // handleInput(){
+    //     this.setState();
+    // }
+
     componentDidMount() {
         this.resetArray();
     }
 
     resetArray() {
         const array = [];
-        for (let i=0; i<300; i++){
+        for (let i=0; i<100; i++){
             array.push(getRandom(5,500));
         }
         this.setState({array});
@@ -68,6 +73,7 @@ export default class SortingApp extends React.Component{
                 <button onClick={()=>this.bubbleSort()}>Bubble Sort</button>
                 <button onClick={()=>this.mergeSort()}>Merge Sort</button>
                 <button onClick={()=>this.quickSort()}>Quick Sort</button>
+                {/* <input className="arrayValue" type="range" min="2" max="100">Array Size</input> */}
             </div>
             
             </div>   
