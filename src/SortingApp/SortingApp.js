@@ -8,8 +8,7 @@ export default class SortingApp extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            array: [],
-            // size: 0
+            array: []
         };
     }
 
@@ -24,22 +23,25 @@ export default class SortingApp extends React.Component{
     
 
     jsSort(){
-        const sortedArray = this.state.array.slice().sort((a,b)=>{return a -b});
+        const sortedArray = this.state.array.sort((a,b)=>{return a -b});
         this.setState({array:sortedArray});
     }
 
     mergeSort(){
-        const mergeSortedArray = mergeSort(this.state.array.slice())
+        const mergeSortedArray = mergeSort(this.state.array)
         this.setState({array:mergeSortedArray});
     }
 
     bubbleSort(){
-        const bubbleSortedArray = bubbleSort(this.state.array.slice());
-        this.setState({array:bubbleSortedArray});
+        const bubbleSortedArray = bubbleSort(this.state.array);
+        setInterval(()=> {
+            this.setState({array:bubbleSortedArray});
+        }, 200);
+        
     }
 
     quickSort(){
-        const quickSortedArray = quickSort(this.state.array.slice());
+        const quickSortedArray = quickSort(this.state.array);
         this.setState({array:quickSortedArray});
     }
 
